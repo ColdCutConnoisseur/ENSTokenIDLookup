@@ -13,15 +13,13 @@ from selenium.webdriver.support import expected_conditions as ec
 def concat_and_format(combo):
     as_list = list(combo)
     joined_str = ''.join(as_list)
-    return joined_str
+    prefixed = '0x' + joined_str
+    return prefixed
 
-OUT_PATH = "./ens_dict_three_lettered.json"
+OUT_PATH = "./ens_dict_0x_prefix.json"
 
-POSSIBLE_CHARS = ['a', 'b', 'c', 'd', 'e', 'f',
-                  'g', 'h', 'i', 'j', 'k', 'l', 
-                  'm', 'n', 'o', 'p', 'q', 'r',
-                  's', 't', 'u', 'v', 'w', 'x',
-                  'y', 'z']
+POSSIBLE_CHARS = ['0', '1', '2', '3', '4', '5',
+                  '6', '7', '8', '9'] 
 
 ALL_BASE_DOMAINS = combinations_with_replacement(POSSIBLE_CHARS, 3)
 
